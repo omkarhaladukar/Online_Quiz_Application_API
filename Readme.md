@@ -20,14 +20,14 @@ npm package manager
 Postman (for testing API endpoints)
 
 ### Step 1: Clone the repository
-git clone https://github.com/omkarhaladukar/Online_Quiz_Application_API.git .
-cd <your-repo-folder>
+\n git clone https://github.com/omkarhaladukar/Online_Quiz_Application_API.git<br>
+cd your-repo-folder
 
 ### Step 2: Install dependencies
 npm install
 
 ### Step 3: Configure environment variables
-Create a .env file in the root folder:
+Create a .env file in the root folder:<br>
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/quiz-api
 Replace MONGO_URI with your MongoDB connection string.
