@@ -20,7 +20,7 @@ npm package manager
 Postman (for testing API endpoints)
 
 ### Step 1: Clone the repository
-git clone https://github.com/omkarhaladukar/Online_Quiz_Application_API.git
+git clone https://github.com/omkarhaladukar/Online_Quiz_Application_API.git .
 cd <your-repo-folder>
 
 ### Step 2: Install dependencies
