@@ -3,21 +3,21 @@ Online Quiz Application API
 Quiz API Documentation
 ## 1. Project Overview
 
-The Quiz API is a RESTful API built with Node.js, Express, and MongoDB that allows users to:
-Create quizzes with multiple-choice or text-based questions.
-Add questions to quizzes, including specifying correct answers.
-List all quizzes.
-Retrieve quiz questions (without exposing correct answers).
-Submit answers and calculate scores.
-This API is designed for integration with web or mobile applications that need a quiz/assessment functionality.
+The Quiz API is a RESTful API built with Node.js, Express, and MongoDB that allows users to:<br>
+Create quizzes with multiple-choice or text-based questions.<br>
+Add questions to quizzes, including specifying correct answers.<br>
+List all quizzes.<br>
+Retrieve quiz questions (without exposing correct answers).<br>
+Submit answers and calculate scores.<br>
+This API is designed for integration with web or mobile applications that need a quiz/assessment functionality.<br>
 
 ## 2. Local Setup and Running the Project
 ## Prerequisites
 
-Node.js v18+
-MongoDB installed and running locally (or a MongoDB Atlas URI)
-npm package manager
-Postman (for testing API endpoints)
+Node.js v18+<br>
+MongoDB installed and running locally (or a MongoDB Atlas URI)<br>
+npm package manager<br>
+Postman (for testing API endpoints)<br>
 
 ### Step 1: Clone the repository
 \n git clone https://github.com/omkarhaladukar/Online_Quiz_Application_API.git<br>
@@ -51,17 +51,19 @@ use Postman or Thunder Client
 
 Endpoint: POST /api/quizzes<br>
 Body (JSON):<br>
+<br>
 {<br>
   "title": "JavaScript Basics",<br>
   "description": "Test your JS knowledge"<br>
 }<br>
-
+<br>
 Response: Returns the quiz _id.
 
 ### 2️⃣ Add a Question with Correct Answers
 
 Endpoint: POST /api/quizzes/:quizId/questions<br>
-Body (JSON):<br>
+Body (JSON):
+<br>
 {<br>
   "text": "Which of the following are JavaScript frameworks?",<br>
   "type": "multiple",<br>
@@ -77,7 +79,8 @@ Body (JSON):<br>
 ### 3️⃣ List All Quizzes
 
 Endpoint: GET /api/quizzes<br>
-Response:<br>
+Response:
+<br>
 [<br>
   {<br>
     "_id": "64fab001",<br>
@@ -95,7 +98,8 @@ Response: Each question shows _id, text, type, and options. Correct answers are 
 ### 5️⃣ Submit Answers and Calculate Score
 
 Endpoint: POST /api/quizzes/:quizId/submit<br>
-Body (JSON):<br>
+Body (JSON):
+<br>
 {<br>
   "answers": [<br>
     {<br>
@@ -107,10 +111,11 @@ Body (JSON):<br>
       "textAnswer": "ECMAScript"<br>
     }<br>
   ]<br>
-}<br>
+}
+<br>
 
-Response:<br>
-
+Response:
+<br>
 {<br>
   "status": 200,<br>
   "data": {<br>
