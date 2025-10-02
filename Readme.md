@@ -12,7 +12,7 @@ Submit answers and calculate scores.<br>
 This API is designed for integration with web or mobile applications that need a quiz/assessment functionality.<br>
 
 ## Data modeling diagram(ERD)
-![model](<WhatsApp Image 2025-10-02 at 12.54.59_779ba22b.jpg>)
+![model](<WhatsApp Image 2025-10-02 at 19.35.33_5f3ee66e.jpg>)
 
 ## 2. Local Setup and Running the Project
 ## Prerequisites

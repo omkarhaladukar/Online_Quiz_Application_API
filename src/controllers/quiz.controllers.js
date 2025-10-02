@@ -32,23 +32,23 @@ export const addQuestion = asyncHandler(async (req, res) => {
     const quiz = await Quiz.findById(quizId);
     if (!quiz) throw new ApiError(404, "Quiz not found");
 
-    // Step 1: Pre-generate ObjectIds for options
+    // Pre-generate ObjectIds for options
     const optionIds = options.map(() => new mongoose.Types.ObjectId());
 
-    // Step 2: Attach _id to each option
+    // Attach _id to each option
     const optionsWithIds = options.map((opt, index) => ({
         _id: optionIds[index],
         text: opt.text,
     }));
 
-    // Step 3: Map correctOptions text → ObjectIds
+    // Map correctOptions text → ObjectIds
     const correctOptionIds = correctOptions.map((txt) => {
         const option = optionsWithIds.find((o) => o.text === txt);
         if (!option) throw new ApiError(400, `Correct option "${txt}" not found in options`);
         return option._id;
     });
 
-    // Step 4: Create question
+    // Create question
     const question = await Question.create({
         quiz: quiz._id,
         text,
@@ -58,7 +58,7 @@ export const addQuestion = asyncHandler(async (req, res) => {
         correctAnswerText,
     });
 
-    // Step 5: Add question to quiz
+    // Add question to quiz
     quiz.questions.push(question._id);
     await quiz.save();
 
