@@ -54,10 +54,6 @@ const SubmissionSchema = new Schema(
             type: Date,
             default: Date.now
         },
-        takenBy: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }, 
     },
     { timestamps: true }
 );
