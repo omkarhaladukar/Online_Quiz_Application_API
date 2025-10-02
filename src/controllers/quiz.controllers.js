@@ -10,6 +10,10 @@ import { ApiError } from "../utils/ApiError.js";
 export const createQuiz = asyncHandler(async (req, res) => {
     const { title, description } = req.body;
 
+    if (!title || !description) {
+        throw new ApiError(400, "Title and description are required")
+    }
+
     const quiz = await Quiz.create({ title, description });
     return res
         .status(201)
